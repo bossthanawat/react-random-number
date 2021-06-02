@@ -1,13 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [num, setNum] = useState(1)
+  const handleClick = () => {
+    setNum(num+1)
+  }
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Edit <code>src/App.js</code> and save to reload. {num}
         </p>
         <a
           className="App-link"
@@ -17,6 +22,7 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={handleClick}>click สิ</button>
       </header>
     </div>
   );
