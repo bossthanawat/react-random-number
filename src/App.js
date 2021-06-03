@@ -1,28 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 
 function App() {
-  const [num, setNum] = useState(1)
-  const handleClick = () => {
-    setNum(num+1)
+  const [num, setNum] = useState([0,0,0])
+  const random = () => {
+    return Math.ceil(Math.random() * 9);
   }
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload. {num}
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <button onClick={handleClick}>click สิ</button>
+        <p>Random number</p>
+        <div className = "container">
+          <div className = "number">{num[0]}</div>
+          <div className = "number">{num[1]}</div>
+          <div className = "number">{num[2]}</div>
+        </div>
+        <button onClick={() => {
+          setNum([random(),random(),random()]);
+        }}>random</button>
       </header>
     </div>
   );
